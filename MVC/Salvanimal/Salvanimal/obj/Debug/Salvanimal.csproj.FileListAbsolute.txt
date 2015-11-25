@@ -78,3 +78,4 @@ C:\Users\Ricardo Cruz\Documents\Metodologias-de-Projeto-e-de-Investigacao\MVC\Sa
 C:\Users\Ricardo Cruz\Documents\Metodologias-de-Projeto-e-de-Investigacao\MVC\Salvanimal\Salvanimal\obj\Debug\Salvanimal.csprojResolveAssemblyReference.cache
 C:\Users\Ricardo Cruz\Documents\Metodologias-de-Projeto-e-de-Investigacao\MVC\Salvanimal\Salvanimal\obj\Debug\Salvanimal.dll
 C:\Users\Ricardo Cruz\Documents\Metodologias-de-Projeto-e-de-Investigacao\MVC\Salvanimal\Salvanimal\obj\Debug\Salvanimal.pdb
+C:\Users\dario\Documents\Metodologias-de-Projeto-e-de-Investigacao\MVC\Salvanimal\Salvanimal\obj\Debug\Salvanimal.csprojResolveAssemblyReference.cache
