@@ -1,4 +1,4 @@
-﻿@model VerticalculoWebsite.Models.NoticiasEntity
+﻿@model Salvanimal.Models.NoticiasEntity
 
 @{
     ViewBag.Title = "Noticias";
@@ -11,7 +11,7 @@
 <div id="Data-Noticia-div">
     @Model.data.ToString("d")
 </div>
-<br />
+<br/>
 <div class="float-right">
     @if (ViewBag.Index > 1)
     {
@@ -35,7 +35,7 @@
             }
         }
     }
-    @if (ViewBag.Index < new VerticalculoWebsite.Models.NoticiasContext().NoticiasProfiles.ToArray().Length)
+    @if (ViewBag.Index < new Salvanimal.Models.NoticiasContext().NoticiasProfiles.ToArray().Length)
     {
         int index = (int)ViewBag.Index + 1;
         <b>@Html.ActionLink("Proximo", "Noticias", new { index = index })</b>

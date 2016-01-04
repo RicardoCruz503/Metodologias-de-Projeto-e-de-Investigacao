@@ -1,15 +1,14 @@
-﻿using Salvanimal.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Salvanimal.Models;
 
 namespace VerticalculoWebsite.Controllers
 {
-
     public class NoticiasController : Controller
     {
         private NoticiasContext db = new NoticiasContext();
@@ -33,6 +32,10 @@ namespace VerticalculoWebsite.Controllers
         public ActionResult Noticias(int index = 1)
         {
             ViewBag.Index = index;
+            if (db.NoticiasProfiles.ToArray().Reverse().ToArray().Length == 0)
+            {
+                return View();
+            }
             return View(db.NoticiasProfiles.ToArray().Reverse().ToArray()[index - 1]);
         }
 
