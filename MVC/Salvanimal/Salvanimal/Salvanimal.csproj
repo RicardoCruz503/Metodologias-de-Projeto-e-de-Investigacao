@@ -162,13 +162,16 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NoticiasController.cs" />
+    <Compile Include="Controllers\QuotasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AnimalsModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\NoticiasModel.cs" />
+    <Compile Include="Models\QuotasModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -243,6 +246,11 @@
     <Content Include="Views\Noticias\Edit.cshtml" />
     <Content Include="Views\Noticias\ManageNoticias.cshtml" />
     <Content Include="Views\Noticias\Noticias.cshtml" />
+    <Content Include="Views\Quotas\Create.cshtml" />
+    <Content Include="Views\Quotas\Delete.cshtml" />
+    <Content Include="Views\Quotas\Details.cshtml" />
+    <Content Include="Views\Quotas\Edit.cshtml" />
+    <Content Include="Views\Quotas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

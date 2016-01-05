@@ -74,10 +74,14 @@ namespace Salvanimal.Models
         public string Email { get; set; }
 
         [Required]
-        [StringLength(9, ErrorMessage="O número de telefone/telemovel que introduziu não é valido", MinimumLength=9)]
-        [Phone]
-        [Display(Name = "Telefone/Telemóvel")]
-        public string PhoneNumber { get; set; }
+        [StringLength(30, ErrorMessage="Invalid Password", MinimumLength=6)]
+        [Display(Name = "Password")]
+        public string Password { get; set; }
+
+        [Required]
+        [StringLength(30, ErrorMessage = "Invalid Password", MinimumLength = 6)]
+        [Display(Name = "PasswordConfirmation")]
+        public string PasswordConfirmed { get; set; }
 
     }
 
