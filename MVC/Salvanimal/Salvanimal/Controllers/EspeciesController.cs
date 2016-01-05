@@ -10,112 +10,107 @@ using Salvanimal.Models;
 
 namespace Salvanimal.Controllers
 {
-    public class QuotasController : Controller
+    public class EspeciesController : Controller
     {
-        private QuotasContext db = new QuotasContext();
+        private EspeciesContext db = new EspeciesContext();
 
-        // GET: Quotas
+        // GET: Especies
         public ActionResult Index()
         {
-            var noticiasProfiles = db.NoticiasProfiles.Include(q => q.UserContext);
-            return View(noticiasProfiles.ToList());
+            return View(db.NoticiasProfiles.ToList());
         }
 
-        // GET: Quotas/Details/5
+        // GET: Especies/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            QuotasEntity quotasEntity = db.NoticiasProfiles.Find(id);
-            if (quotasEntity == null)
+            EspeciesEntity especiesEntity = db.NoticiasProfiles.Find(id);
+            if (especiesEntity == null)
             {
                 return HttpNotFound();
             }
-            return View(quotasEntity);
+            return View(especiesEntity);
         }
 
-        // GET: Quotas/Create
+        // GET: Especies/Create
         public ActionResult Create()
         {
-            ViewBag.SocioId = new SelectList(db.AspNetUsers, "Id", "Email");
             return View();
         }
 
-        // POST: Quotas/Create
+        // POST: Especies/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "QuotaId,SocioId,Descrição,Valor,data")] QuotasEntity quotasEntity)
+        public ActionResult Create([Bind(Include = "EspecieId,NomeEspecie")] EspeciesEntity especiesEntity)
         {
             if (ModelState.IsValid)
             {
-                db.NoticiasProfiles.Add(quotasEntity);
+                db.NoticiasProfiles.Add(especiesEntity);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.SocioId = new SelectList(db.AspNetUsers, "Id", "Email", quotasEntity.SocioId);
-            return View(quotasEntity);
+            return View(especiesEntity);
         }
 
-        // GET: Quotas/Edit/5
+        // GET: Especies/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            QuotasEntity quotasEntity = db.NoticiasProfiles.Find(id);
-            if (quotasEntity == null)
+            EspeciesEntity especiesEntity = db.NoticiasProfiles.Find(id);
+            if (especiesEntity == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.SocioId = new SelectList(db.AspNetUsers, "Id", "Email", quotasEntity.SocioId);
-            return View(quotasEntity);
+            return View(especiesEntity);
         }
 
-        // POST: Quotas/Edit/5
+        // POST: Especies/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "QuotaId,SocioId,Descrição,Valor,data")] QuotasEntity quotasEntity)
+        public ActionResult Edit([Bind(Include = "EspecieId,NomeEspecie")] EspeciesEntity especiesEntity)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(quotasEntity).State = EntityState.Modified;
+                db.Entry(especiesEntity).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.SocioId = new SelectList(db.AspNetUsers, "Id", "Email", quotasEntity.SocioId);
-            return View(quotasEntity);
+            return View(especiesEntity);
         }
 
-        // GET: Quotas/Delete/5
+        // GET: Especies/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            QuotasEntity quotasEntity = db.NoticiasProfiles.Find(id);
-            if (quotasEntity == null)
+            EspeciesEntity especiesEntity = db.NoticiasProfiles.Find(id);
+            if (especiesEntity == null)
             {
                 return HttpNotFound();
             }
-            return View(quotasEntity);
+            return View(especiesEntity);
         }
 
-        // POST: Quotas/Delete/5
+        // POST: Especies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            QuotasEntity quotasEntity = db.NoticiasProfiles.Find(id);
-            db.NoticiasProfiles.Remove(quotasEntity);
+            EspeciesEntity especiesEntity = db.NoticiasProfiles.Find(id);
+            db.NoticiasProfiles.Remove(especiesEntity);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

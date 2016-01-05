@@ -17,6 +17,8 @@ namespace Salvanimal.Models
         }
 
         public DbSet<QuotasEntity> NoticiasProfiles { get; set; }
+
+        public System.Data.Entity.DbSet<Salvanimal.Models.AspNetUsers> AspNetUsers { get; set; }
     }
 
     [Table("QuotasEntity")]
@@ -25,6 +27,10 @@ namespace Salvanimal.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int QuotaId { get; set; }
+        [ForeignKey("UserContext")]
+        [Required]
+        public string SocioId { get; set; }
+        public virtual AspNetUsers UserContext { get; set; }
         [Required]
         [StringLength(100, ErrorMessage = "A {0} tem de ter pelo menos {2} caracteres.", MinimumLength = 10)]
         public string Descrição { get; set; }
