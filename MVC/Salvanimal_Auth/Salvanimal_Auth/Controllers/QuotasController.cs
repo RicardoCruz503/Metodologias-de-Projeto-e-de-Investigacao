@@ -23,8 +23,9 @@ namespace Salvanimal_Auth.Controllers
 
         public ActionResult CheckQuotas(string Id)
         {
+            
             var quotas = db.Quotas.Where(q => q.AspNetUsers.Id.Equals(Id)).Include(q => q.AspNetUsers);
-            return RedirectToAction("ManageQuotas", quotas.ToList());
+            return View("ManageQuotas", quotas);
         }
 
         [HttpPost]

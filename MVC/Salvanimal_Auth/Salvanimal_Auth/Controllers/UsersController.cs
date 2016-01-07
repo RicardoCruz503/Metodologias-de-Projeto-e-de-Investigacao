@@ -14,28 +14,20 @@ namespace Salvanimal_Auth.Controllers
     public class UsersController : Controller
     {
         private UserEntities db = new UserEntities();
-        private UserRolesEntities dbr = new UserRolesEntities();
+        private QuotasEntities dbq = new QuotasEntities();
         // GET: Users
         public ActionResult ManageUsers()
         {
-            var users = db.AspNetUsers.Where(u => u.UserName.Contains("Admin").Equals(false));
+            var users = dbq.AspNetUsers.Where(u => u.UserName.Contains("Admin").Equals(false));
+            return View(users.ToList());
+        }
+        [HttpPost]
+        public ActionResult ManageUsers(string searchName)
+        {
+            var users = db.AspNetUsers.Where(u => u.UserName.Contains("Admin").Equals(false)).Where(u => u.UserName.ToLower().Contains(searchName.ToLower()));
             return View(users.ToList());
         }
 
-        // GET: Users/Details/5
-        public ActionResult Details(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            AspNetUsers aspNetUsers = db.AspNetUsers.Find(id);
-            if (aspNetUsers == null)
-            {
-                return HttpNotFound();
-            }
-            return View(aspNetUsers);
-        }
 
         // GET: Users/Create
         public ActionResult Create()

@@ -191,11 +191,8 @@
     <Compile Include="Models\AspNetRoles.cs">
       <DependentUpon>UserModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\AspNetUserRoles.cs">
-      <DependentUpon>UserRolesModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\AspNetUsers.cs">
-      <DependentUpon>UserModel.tt</DependentUpon>
+      <DependentUpon>QuotasModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Especies.cs">
       <DependentUpon>EspeciesModel.tt</DependentUpon>
@@ -268,21 +265,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserRolesModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserRolesModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserRolesModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserRolesModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserRolesModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserRolesModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -346,23 +328,6 @@
       <DependentUpon>NoticiasModel.edmx</DependentUpon>
       <LastGenOutput>NoticiasModel.cs</LastGenOutput>
     </Content>
-    <EntityDeploy Include="Models\QuotasModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QuotasModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\QuotasModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QuotasModel.edmx</DependentUpon>
-      <LastGenOutput>QuotasModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\QuotasModel.edmx.diagram">
-      <DependentUpon>QuotasModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\QuotasModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QuotasModel.edmx</DependentUpon>
-      <LastGenOutput>QuotasModel.cs</LastGenOutput>
-    </Content>
     <EntityDeploy Include="Models\UserModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>UserModel.Designer.cs</LastGenOutput>
@@ -380,22 +345,22 @@
       <DependentUpon>UserModel.edmx</DependentUpon>
       <LastGenOutput>UserModel.cs</LastGenOutput>
     </Content>
-    <EntityDeploy Include="Models\UserRolesModel.edmx">
+    <EntityDeploy Include="Models\QuotasModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UserRolesModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>QuotasModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\UserRolesModel.Context.tt">
+    <Content Include="Models\QuotasModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserRolesModel.edmx</DependentUpon>
-      <LastGenOutput>UserRolesModel.Context.cs</LastGenOutput>
+      <DependentUpon>QuotasModel.edmx</DependentUpon>
+      <LastGenOutput>QuotasModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\UserRolesModel.edmx.diagram">
-      <DependentUpon>UserRolesModel.edmx</DependentUpon>
+    <Content Include="Models\QuotasModel.edmx.diagram">
+      <DependentUpon>QuotasModel.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\UserRolesModel.tt">
+    <Content Include="Models\QuotasModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserRolesModel.edmx</DependentUpon>
-      <LastGenOutput>UserRolesModel.cs</LastGenOutput>
+      <DependentUpon>QuotasModel.edmx</DependentUpon>
+      <LastGenOutput>QuotasModel.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

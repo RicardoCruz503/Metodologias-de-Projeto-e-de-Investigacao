@@ -158,11 +158,12 @@ namespace Salvanimal_Auth.Controllers
                 {
                     if (!model.UserName.Contains("Admin"))
                     {
-                        Roles.AddUserToRole(model.UserName, "Socio");
+                        var userId = new QuotasEntities().AspNetUsers.Where(u => u.UserName.Equals(model.UserName)).Select(u => u.Id).First();
+                        UserManager.AddToRole(userId, "Socio");
                     }
                     else
                     {
-                        Roles.AddUserToRole(model.UserName, "Administrador");
+                        UserManager.AddToRole(model.UserName, "Administrador");
                     }
                     //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 

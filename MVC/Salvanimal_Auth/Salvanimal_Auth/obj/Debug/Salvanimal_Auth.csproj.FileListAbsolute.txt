@@ -52,3 +52,4 @@ C:\Users\Ricardo Cruz\Desktop\Try\Salvanimal_Auth\Salvanimal_Auth\bin\Microsoft.
 C:\Users\Ricardo Cruz\Desktop\Try\Salvanimal_Auth\Salvanimal_Auth\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Ricardo Cruz\Desktop\Try\Salvanimal_Auth\Salvanimal_Auth\obj\Debug\Salvanimal_Auth.dll
 C:\Users\Ricardo Cruz\Desktop\Try\Salvanimal_Auth\Salvanimal_Auth\obj\Debug\Salvanimal_Auth.pdb
+C:\Users\Ricardo Cruz\Desktop\Try\Salvanimal_Auth\Salvanimal_Auth\obj\Debug\Salvanimal_Auth.csprojResolveAssemblyReference.cache

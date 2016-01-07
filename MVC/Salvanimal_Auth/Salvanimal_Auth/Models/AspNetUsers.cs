@@ -17,7 +17,7 @@ namespace Salvanimal_Auth.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public AspNetUsers()
         {
-            this.AspNetRoles = new HashSet<AspNetRoles>();
+            this.Quotas = new HashSet<Quotas>();
         }
     
         public string Id { get; set; }
@@ -34,6 +34,6 @@ namespace Salvanimal_Auth.Models
         public string UserName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AspNetRoles> AspNetRoles { get; set; }
+        public virtual ICollection<Quotas> Quotas { get; set; }
     }
 }
