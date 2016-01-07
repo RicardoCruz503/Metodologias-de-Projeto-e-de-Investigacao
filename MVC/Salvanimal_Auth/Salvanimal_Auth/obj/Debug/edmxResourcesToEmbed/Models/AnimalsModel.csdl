@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AnimalsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Animals">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Especie" Type="Int32" Nullable="false" />
+    <Property Name="Raca" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Idade" Type="Int32" Nullable="false" />
+    <Property Name="Observacoes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Imagem" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Especies" Relationship="Self.FK__Animals__Especie__2A4B4B5E" FromRole="Animals" ToRole="Especies" />
+  </EntityType>
+  <EntityType Name="Especies">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomeEspecie" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Animals" Relationship="Self.FK__Animals__Especie__2A4B4B5E" FromRole="Especies" ToRole="Animals" />
+  </EntityType>
+  <Association Name="FK__Animals__Especie__2A4B4B5E">
+    <End Role="Especies" Type="Self.Especies" Multiplicity="1" />
+    <End Role="Animals" Type="Self.Animals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Especies">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Animals">
+        <PropertyRef Name="Especie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AnimalsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Animals" EntityType="Self.Animals" />
+    <EntitySet Name="Especies" EntityType="Self.Especies" />
+    <AssociationSet Name="FK__Animals__Especie__2A4B4B5E" Association="Self.FK__Animals__Especie__2A4B4B5E">
+      <End Role="Especies" EntitySet="Especies" />
+      <End Role="Animals" EntitySet="Animals" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

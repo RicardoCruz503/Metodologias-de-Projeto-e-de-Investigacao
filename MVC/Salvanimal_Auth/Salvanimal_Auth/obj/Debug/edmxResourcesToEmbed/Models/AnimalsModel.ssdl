@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AnimalsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Animals">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Especie" Type="int" Nullable="false" />
+    <Property Name="Raca" Type="text" Nullable="false" />
+    <Property Name="Nome" Type="text" Nullable="false" />
+    <Property Name="Idade" Type="int" Nullable="false" />
+    <Property Name="Observacoes" Type="text" Nullable="false" />
+    <Property Name="Imagem" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Especies">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomeEspecie" Type="text" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Animals__Especie__2A4B4B5E">
+    <End Role="Especies" Type="Self.Especies" Multiplicity="1" />
+    <End Role="Animals" Type="Self.Animals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Especies">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Animals">
+        <PropertyRef Name="Especie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AnimalsModelStoreContainer">
+    <EntitySet Name="Animals" EntityType="Self.Animals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Especies" EntityType="Self.Especies" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Animals__Especie__2A4B4B5E" Association="Self.FK__Animals__Especie__2A4B4B5E">
+      <End Role="Especies" EntitySet="Especies" />
+      <End Role="Animals" EntitySet="Animals" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
