@@ -24,7 +24,7 @@ namespace Salvanimal_Auth.Controllers
         [HttpPost]
         public ActionResult ManageUsers(string searchName)
         {
-            var users = db.AspNetUsers.Where(u => u.UserName.Contains("Admin").Equals(false)).Where(u => u.UserName.ToLower().Contains(searchName.ToLower()));
+            var users = dbq.AspNetUsers.Where(u => u.UserName.Contains("Admin").Equals(false)).Where(u => u.UserName.ToLower().Contains(searchName.ToLower()));
             return View(users.ToList());
         }
 

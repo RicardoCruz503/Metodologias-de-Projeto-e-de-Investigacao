@@ -3,31 +3,39 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - APAT Tomar</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+<body style="background-color: #ACD036">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#ffffff">
+        <div class="container" style="background-color:#ffffff">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <img src="~/Resources/Images/simbolo APARR.jpg" style="width: 65px;"/>
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse" style="background-color:#ffffff">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    @if (User.IsInRole("Administrador")) { 
+
+                    @if (User.IsInRole("Administrador"))
+                    {
                         <li>@Html.ActionLink("Gerir Utilizadores", "ManageUsers", "Users")</li>
                         <li>@Html.ActionLink("Gerir Quotas", "ManageQuotas", "Quotas")</li>
+                        <li>@Html.ActionLink("Gerir Animais", "ManageAnimals", "Animals")</li>
                         <li>@Html.ActionLink("Gerir Noticias", "ManageNoticias", "Noticias")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Início", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Animais", "Animals", "Animals")</li>
+                        <li>@Html.ActionLink("Notícias", "Noticias", "Noticias")</li>
+                        <li>@Html.ActionLink("Sobre nós", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contactos", "Contact", "Home")</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -37,8 +45,8 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        <footer stye="position: fixed; bottom: 0;">
+            <p>&copy; @DateTime.Now.Year - Associação Protetora dos Animais de Tomar</p>
         </footer>
     </div>
 

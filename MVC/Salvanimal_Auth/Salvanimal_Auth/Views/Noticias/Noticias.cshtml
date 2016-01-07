@@ -1,0 +1,44 @@
+﻿@model Salvanimal_Auth.Models.NoticiasEntity
+
+@{
+    ViewBag.Title = "Noticias";
+}
+
+<h1>Noticias</h1>
+
+    <div id="Noticia-Titulo-div" style="text-align: center"><h2><u>@Html.DisplayFor(model => model.Titulo)</u></h2></div>
+    <br />
+    <div id="Corpo-Noticia-div" style="text-align: justify; margin-left:10%">@Html.Raw(Model.CorpoNoticia)</div>
+    <br />
+    <div id="Data-Noticia-div" style="float:right">
+        @Model.data.ToString("d")
+    </div>
+    <div class="float-right" style="float:right">
+        @if (ViewBag.Index > 1)
+        {
+            int index = (int)ViewBag.Index - 1;
+            <b>@Html.ActionLink("Anterior", "Noticias", new { index = index })</b>
+        }
+        @{
+            int count = 0;
+            int[] result = { -1, -1, -1 };
+            for (int i = ViewBag.Index; i > 0 && count < 3; i--)
+            {
+                result[count] = i;
+                count++;
+            }
+            result = result.Reverse().ToArray();
+            for (int i = 0; i < result.Length; i++)
+            {
+                if (result[i] != -1)
+                {
+                    <b>@Html.ActionLink(result[i].ToString(), "Noticias", new { index = result[i] })</b>
+                }
+            }
+        }
+        @if (ViewBag.Index < new Salvanimal_Auth.Models.NoticiasEntities().NoticiasEntity.ToArray().Length)
+        {
+            int index = (int)ViewBag.Index + 1;
+            <b>@Html.ActionLink("Proximo", "Noticias", new { index = index })</b>
+        }
+    </div>

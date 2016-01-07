@@ -14,7 +14,16 @@ namespace Salvanimal_Auth.Models
     
     public partial class Especies
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Especies()
+        {
+            this.Animals = new HashSet<Animals>();
+        }
+    
         public int Id { get; set; }
         public string NomeEspecie { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Animals> Animals { get; set; }
     }
 }

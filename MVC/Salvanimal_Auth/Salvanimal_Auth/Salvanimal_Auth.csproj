@@ -161,6 +161,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AnimalsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NoticiasController.cs" />
@@ -195,22 +196,7 @@
       <DependentUpon>QuotasModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Especies.cs">
-      <DependentUpon>EspeciesModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EspeciesModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EspeciesModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EspeciesModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EspeciesModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EspeciesModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EspeciesModel.edmx</DependentUpon>
+      <DependentUpon>AnimalsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -269,48 +255,14 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\AnimalsModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AnimalsModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\AnimalsModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AnimalsModel.edmx</DependentUpon>
-      <LastGenOutput>AnimalsModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\AnimalsModel.edmx.diagram">
-      <DependentUpon>AnimalsModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\AnimalsModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AnimalsModel.edmx</DependentUpon>
-      <LastGenOutput>AnimalsModel.cs</LastGenOutput>
-    </Content>
-    <EntityDeploy Include="Models\EspeciesModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EspeciesModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\EspeciesModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EspeciesModel.edmx</DependentUpon>
-      <LastGenOutput>EspeciesModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\EspeciesModel.edmx.diagram">
-      <DependentUpon>EspeciesModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\EspeciesModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EspeciesModel.edmx</DependentUpon>
-      <LastGenOutput>EspeciesModel.cs</LastGenOutput>
-    </Content>
     <EntityDeploy Include="Models\NoticiasModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>NoticiasModel.Designer.cs</LastGenOutput>
@@ -362,7 +314,34 @@
       <DependentUpon>QuotasModel.edmx</DependentUpon>
       <LastGenOutput>QuotasModel.cs</LastGenOutput>
     </Content>
+    <EntityDeploy Include="Models\AnimalsModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AnimalsModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\AnimalsModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AnimalsModel.edmx</DependentUpon>
+      <LastGenOutput>AnimalsModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\AnimalsModel.edmx.diagram">
+      <DependentUpon>AnimalsModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\AnimalsModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AnimalsModel.edmx</DependentUpon>
+      <LastGenOutput>AnimalsModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -416,7 +395,7 @@
     <Content Include="Views\Quotas\ManageQuotas.cshtml" />
     <Content Include="Views\Noticias\Create.cshtml" />
     <Content Include="Views\Noticias\Delete.cshtml" />
-    <Content Include="Views\Noticias\Details.cshtml" />
+    <Content Include="Views\Noticias\Noticias.cshtml" />
     <Content Include="Views\Noticias\Edit.cshtml" />
     <Content Include="Views\Noticias\ManageNoticias.cshtml" />
     <Content Include="Views\Users\Create.cshtml" />
@@ -424,14 +403,17 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\ManageUsers.cshtml" />
+    <Content Include="Views\Animals\Create.cshtml" />
+    <Content Include="Views\Animals\Delete.cshtml" />
+    <Content Include="Views\Animals\Animals.cshtml" />
+    <Content Include="Views\Animals\Edit.cshtml" />
+    <Content Include="Views\Animals\ManageAnimals.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Resources\Images\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
